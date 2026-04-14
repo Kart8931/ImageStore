@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'http://localhost:3000/api',
+  baseURL: 'https://imagestore-9ofn.onrender.com',
 });
 
 // Har request mein token apne aap chala jaye, uske liye interceptor
