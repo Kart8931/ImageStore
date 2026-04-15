@@ -27,12 +27,12 @@ app.use('/api/images', require('./routes/imageRoutes.js'));
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
-const frontendDistPath = path.join(__dirname, "../../frontend/dist");
+const _dirname = path.resolve(); // Ye root directory ka path dega
 
-// Serve the static files
-app.use(express.static(frontendDistPath));
+// Static files serve karne ke liye sahi path
+app.use(express.static(path.join(_dirname, "/frontend/dist")));
 
-
-app.get(/.*/, (_, res) => {
-    res.sendFile(path.join(frontendDistPath, "index.html"));
+// Frontend serve karne ke liye wildcard route
+app.get("*", (req, res) => {
+  res.sendFile(path.join(_dirname, "frontend", "dist", "index.html"));
 });
