@@ -117,7 +117,7 @@ const Dashboard = () => {
           <div className="grid grid-cols-6 gap-4">
             {filteredImages.map(img => (
               <div key={img._id} className="relative group bg-white p-2 border rounded shadow">
-                <img src={`https://imagestore-1.onrender.com${img.imageUrl}`} className="w-full h-24 object-cover rounded" />
+                <img src={`http://localhost:3000${img.imageUrl}`} className="w-full h-24 object-cover rounded" />
                 <button onClick={() => handleDelete(img._id, 'images')} className="absolute top-1 right-1 hidden group-hover:block bg-red-500 text-white rounded-full w-5 h-5 text-[10px]">✕</button>
               </div>
             ))}
