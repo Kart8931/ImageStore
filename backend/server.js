@@ -33,6 +33,7 @@ const _dirname = path.resolve(); // Ye root directory ka path dega
 app.use(express.static(path.join(_dirname, "/frontend/dist")));
 
 // Frontend serve karne ke liye wildcard route
-app.get("*", (req, res) => {
-  res.sendFile(path.join(_dirname, "frontend", "dist", "index.html"));
+// Express 5 compatibility ke liye syntax change karein
+app.get(/^\/(?!api).*/, (req, res) => {
+    res.sendFile(path.join(frontendDistPath, "index.html"));
 });
