@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'https://imagestore-9ofn.onrender.com',
+  baseURL: 'https://imagestore-1.onrender.com',
 });
 
 // Har request mein token apne aap chala jaye, uske liye interceptor
